@@ -75,7 +75,7 @@ jobs:
     - stage: Test
       php: 7.2
       addons:
-        postgresql: "10.0"
+        postgresql: "9.6"
       env:
         - "DB=postgres POSTGRES=10.0"
       before_install:
