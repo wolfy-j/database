@@ -75,7 +75,11 @@ jobs:
     - stage: Test
       php: 7.2
       env:
-        - "DB=postgres POSTGRES=10.0"
+        - "DB=postgres POSTGRES=10.10"
+      services:
+        - postgresql
+      addons:
+        postgresql: "10.10"
       before_install:
         - bash ./tests/install-pgsql-10.sh
         - psql -c 'create database spiral;' -U postgres
